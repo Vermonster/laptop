@@ -64,7 +64,7 @@ What it sets up
 * [ImageMagick] for cropping and resizing images
 * [Node.js] and [NPM], for running apps and installing JavaScript packages
 * [Postgres] for storing relational data
-* [Qt] for headless JavaScript testing via Capybara Webkit
+* [PhantomJS] for headless JavaScript testing via Poltergeist
 * [Rbenv] for managing versions of Ruby
 * [RCM] for managing company and personal dotfiles
 * [Redis] for storing key-value data
@@ -84,7 +84,7 @@ What it sets up
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.org/
 [Postgres]: http://www.postgresql.org/
-[Qt]: http://qt-project.org/
+[PhantomJS]: http://http://phantomjs.org/
 [Rbenv]: https://github.com/sstephenson/rbenv
 [RCM]: https://github.com/thoughtbot/rcm
 [Redis]: http://redis.io/
