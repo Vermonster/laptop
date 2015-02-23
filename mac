@@ -146,9 +146,13 @@ brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'phantomjs'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'node'
+brew_install_or_upgrade 'watchman'
 
 brew_install_or_upgrade 'rbenv'
 brew_install_or_upgrade 'ruby-build'
+
+brew_tap 'caskroom/cask'
+brew_install_or_upgrade 'brew-cask'
 
 # shellcheck disable=SC2016
 append_to_zshrc 'eval "$(rbenv init - --no-rehash zsh)"' 1
@@ -186,3 +190,5 @@ fi
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
+
+fancy_echo "RECOMMENDED: brew cask install firefox google-chrome iterm2 slack"
