@@ -150,6 +150,10 @@ brew_install_or_upgrade 'watchman'
 
 brew_install_or_upgrade 'rbenv'
 brew_install_or_upgrade 'ruby-build'
+brew_install_or_upgrade 'rbenv-default-gems'
+brew_install_or_upgrade 'rbenv-gem-rehash'
+brew_install_or_upgrade 'rbenv-bundler'
+rbenv bundler on
 
 brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
@@ -160,6 +164,14 @@ append_to_zshrc 'eval "$(rbenv init - --no-rehash zsh)"' 1
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
 brew_install_or_upgrade 'libyaml'
+
+if [ ! -f "$HOME/.gemrc" ]; then
+  echo "gem: --no-document" > "$HOME/.gemrc"
+fi
+
+if [ ! -f "$HOME/.rbenv/default-gems" ]; then
+  echo "bundler" > "$HOME/.rbenv/default-gems"
+fi
 
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
 
