@@ -102,6 +102,23 @@ brew_launchctl_restart() {
   launchctl load "$HOME/Library/LaunchAgents/$plist" >/dev/null
 }
 
+brew_cask_expand_alias() {
+  brew cask info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
+}
+
+brew_cask_is_installed() {
+  local NAME=$(brew_cask_expand_alias "$1")
+  brew cask list -1 | grep -Fqx "$NAME"
+}
+
+brew_cask_install() {
+  if brew_cask_is_installed "$1"; then
+    echo "$1 is already installed"
+  else
+    brew cask install "$@"
+  fi
+}
+
 gem_install_or_update() {
   if gem list "$1" --installed > /dev/null; then
     fancy_echo "Updating %s ..." "$1"
@@ -158,6 +175,13 @@ rbenv bundler on
 brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
 
+brew_cask_install 'firefox'
+brew_cask_install 'google-chrome'
+brew_cask_install 'google-hangouts'
+brew_cask_install 'iterm2'
+brew_cask_install 'screenhero'
+brew_cask_install 'slack'
+
 # shellcheck disable=SC2016
 append_to_zshrc 'eval "$(rbenv init - --no-rehash zsh)"' 1
 
@@ -202,5 +226,3 @@ fi
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
-
-fancy_echo "RECOMMENDED: brew cask install firefox google-chrome iterm2 slack"
