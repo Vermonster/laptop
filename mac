@@ -174,13 +174,17 @@ rbenv bundler on
 
 brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
+brew_tap 'caskroom/versions'
 
 brew_cask_install 'firefox'
 brew_cask_install 'google-chrome'
+brew_cask_install 'google-drive'
 brew_cask_install 'google-hangouts'
 brew_cask_install 'iterm2'
+brew_cask_install 'rowanj-gitx'
 brew_cask_install 'screenhero'
 brew_cask_install 'slack'
+brew_cask_install 'sublime-text3'
 
 # shellcheck disable=SC2016
 append_to_zshrc 'eval "$(rbenv init - --no-rehash zsh)"' 1
