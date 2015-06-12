@@ -227,6 +227,9 @@ if ! command -v rcup >/dev/null; then
   brew_install_or_upgrade 'rcm'
 fi
 
+fancy_echo "Installing Homebrew update notifier..."
+  curl -fsS https://raw.githubusercontent.com/grantovich/homebrew-notifier/master/install.sh | sh
+
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
