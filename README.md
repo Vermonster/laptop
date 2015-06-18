@@ -57,11 +57,18 @@ What it sets up
 
 * [Bundler] for managing Ruby libraries
 * [Exuberant Ctags] for indexing files for vim tab completion
+* [Firefox]
 * [Foreman] for managing web processes
 * [hub] for interacting with the GitHub API
+* [Git] for version control
+* [GitX]
+* [Google Chrome]
+* [Google Drive]
+* [Google Hangouts]
 * [Heroku Toolbelt] for interacting with the Heroku API
 * [Homebrew] for managing operating system libraries
 * [ImageMagick] for cropping and resizing images
+* [iTerm2]
 * [Node.js] and [NPM], for running apps and installing JavaScript packages
 * [Postgres] for storing relational data
 * [PhantomJS] for headless JavaScript testing via Poltergeist
@@ -70,17 +77,28 @@ What it sets up
 * [Redis] for storing key-value data
 * [Ruby Build] for installing Rubies
 * [Ruby] stable for writing general-purpose code
+* [Screenhero] for screen sharing
 * [The Silver Searcher] for finding things in files
+* [Slack] for team communication/messaging
+* [Sublime Text]
 * [Tmux] for saving project state and switching between projects
+* [Vim]
 * [Zsh] as your shell
 
 [Bundler]: http://bundler.io/
 [Exuberant Ctags]: http://ctags.sourceforge.net/
+[Firefox]: https://www.mozilla.org/en-US/firefox/new/
 [Foreman]: https://github.com/ddollar/foreman
 [hub]: http://hub.github.com/
+[Git]: https://git-scm.com/
+[GitX]: http://rowanj.github.io/gitx/
+[Google Chrome]: http://http://www.google.com/chrome/
+[Google Drive]: https://www.google.com/drive/
+[Google Hangouts]: https://www.google.com/hangouts/
 [Heroku Toolbelt]: https://toolbelt.heroku.com/
 [Homebrew]: http://brew.sh/
 [ImageMagick]: http://www.imagemagick.org/
+[iTerm2]: https://www.iterm2.com/
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.org/
 [Postgres]: http://www.postgresql.org/
@@ -90,8 +108,12 @@ What it sets up
 [Redis]: http://redis.io/
 [Ruby Build]: https://github.com/sstephenson/ruby-build
 [Ruby]: https://www.ruby-lang.org/en/
+[Screenhero]: https://screenhero.com/
 [The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
+[Slack]: https://slack.com/
+[Sublime Text]: http://www.sublimetext.com/3
 [Tmux]: http://tmux.sourceforge.net/
+[Vim]: http://www.vim.org/
 [Zsh]: http://www.zsh.org/
 
 It should take less than 15 minutes to install (depends on your machine).
@@ -106,17 +128,14 @@ For example:
 ```sh
 #!/bin/sh
 
-brew_tap 'caskroom/cask'
-brew_install_or_upgrade 'brew-cask'
+brew_install_or_upgrade 'mongodb'
+brew_launchctl_restart 'mongodb'
 
-brew cask install dropbox
-brew cask install google-chrome
-brew cask install rdio
+brew_cask_install 'alfred'
+brew_cask_install 'dash'
 
 gem_install_or_update 'parity'
 
-brew_install_or_upgrade 'tree'
-brew_install_or_upgrade 'watch'
 ```
 
 Write your customizations such that they can be run safely more than once.
