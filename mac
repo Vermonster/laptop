@@ -188,6 +188,8 @@ brew_cask_install 'slack'
 brew_cask_install 'sublime-text3'
 brew_cask_install 'virtualbox'
 
+brew_tap 'homebrew/services'
+
 # shellcheck disable=SC2016
 append_to_zshrc 'eval "$(rbenv init - --no-rehash zsh)"' 1
 
