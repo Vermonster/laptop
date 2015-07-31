@@ -163,6 +163,7 @@ brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'phantomjs'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'node'
+brew_install_or_upgrade 'nvm'
 brew_install_or_upgrade 'watchman'
 
 brew_install_or_upgrade 'rbenv'
