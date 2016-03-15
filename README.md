@@ -1,3 +1,9 @@
+# Deprecated
+
+Instead use: https://github.com/Vermonster/laptop-local
+
+<!--
+
 Laptop
 ======
 
@@ -195,3 +201,5 @@ We are [available for hire][hire].
 
 [community]: https://thoughtbot.com/community?utm_source=github
 [hire]: https://thoughtbot.com?utm_source=github
+
+-->
